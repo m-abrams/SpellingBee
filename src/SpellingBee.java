@@ -45,12 +45,39 @@ public class SpellingBee {
     //  that will find the substrings recursively.
     public void generate() {
         // YOUR CODE HERE — Call your recursive method!
+        makeWords("", letters);
+
     }
+    public void makeWords(String word, String letters) {
+        if (letters.length() == 0 && !words.contains(word)) {
+            words.add(word);
+        }
+        for (int i = 0; i < letters.length(); i++) {
+            makeWords(word + letters.charAt(i), letters.substring(0, i) + letters.substring(i + 1));
+        }
+        if (!words.contains(word)) {
+            words.add(word);
+        }
+    }
+
 
     // TODO: Apply mergesort to sort all words. Do this by calling ANOTHER method
     //  that will find the substrings recursively.
     public void sort() {
         // YOUR CODE HERE
+    }
+
+    public ArrayList<String> mergeSort(ArrayList<String> mergeArray, int low, int high) {
+        int middleNum = (high - low) / 2;
+        ArrayList<String> array1 = mergeSort(mergeArray, low, middleNum);
+        ArrayList<String> array2 = mergeSort(mergeArray, middleNum, high);
+        return
+
+    }
+
+    public ArrayList<String> merge(ArrayList<String> arr1, ArrayList<String> arr2) {
+        ArrayList<String> mergedArray = new ArrayList<String>();
+
     }
 
     // Removes duplicates from the sorted list.
